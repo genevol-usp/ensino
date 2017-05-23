@@ -1,7 +1,5 @@
 ## set parameters
 
-setwd("/Users/diogo/Dropbox/ensino/popgen_teaching/")
-
 # Call function for the deterministic selection model
 source("popgen_functions.R")
 
