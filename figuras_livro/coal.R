@@ -14,3 +14,4 @@ result <- pr.coal2.t(10,t)
 
 plot(result ~ t, ylab = "Tempo de coalescência")
 result
+# comment
