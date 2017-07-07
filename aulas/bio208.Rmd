@@ -1,0 +1,34 @@
+---
+title: "Anotações BIO 0208"
+author: "Diogo Meyer"
+date: "7/7/2017"
+output: html_document
+---
+
+# Anotações de aula para BIO 0208 - Processos evolutivos
+
+## Contagem de genes e alelos
+
+Indivíduos são diplóides, em número N. Há portanto 2N "cópias gênicas".
+
+As frequências genotípicas podem ser expressas assim:
+
+$$ f_{AA} = N_{AA} / 2N_{tot} $$
+$$ f_{Aa} = N_{Aa} / 2N_{tot} $$
+$$ f_{aa} = N_{a} / 2N_{tot} $$
+
+A partir desses valores, podemos calcular as frequências alélicas. 
+
+f(A) = 2 * N(AA) + N(aa) / 2Ntot = f(AA) + f(Aa)/2 
+f(a) = 1 - f(A)
+
+
+## Proporções de Hardy-Weinberg
+
+## Processos que levam a desvios de proporções HW
+
+### Endogamia
+
+### Estrutura populacional
+
+### Seleção Natural
