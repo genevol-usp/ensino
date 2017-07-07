@@ -10,6 +10,10 @@ output: html_document
 ## Contagem de genes e alelos
 
 Indivíduos são diplóides, em número N. Há portanto 2N "cópias gênicas".
+A primeira coisa que faremos é aprender a contar:
+
+- frequências genotípicas
+- frequências alélicas
 
 As frequências genotípicas podem ser expressas assim:
 
@@ -19,8 +23,8 @@ $$ f_{aa} = N_{a} / 2N_{tot} $$
 
 A partir desses valores, podemos calcular as frequências alélicas. 
 
-f(A) = 2 * N(AA) + N(aa) / 2Ntot = f(AA) + f(Aa)/2 
-f(a) = 1 - f(A)
+$$ f(A) = 2 * N(AA) + N(aa) / 2Ntot = f(AA) + f(Aa)/2 $$
+$$ f(a) = 1 - f(A)$$
 
 
 ## Proporções de Hardy-Weinberg
