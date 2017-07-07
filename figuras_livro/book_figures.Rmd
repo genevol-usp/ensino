@@ -1,0 +1,101 @@
+---
+title: "Figuras para livro Jorge"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+---
+
+# Introdução
+
+Aqui crio um documento que gera todas as figuras usadas no livro "Base genética de mudança evolutiva humana"
+
+# Deriva genética e IBD
+
+Inicialmente vamos visualizar as trajetórias de decréscimo de IBD. A expressão que nos interessa é.
+
+$$ F_{t} = 1  - (1  - 1/2N)^t $$
+
+As trajetórias para diferentes valores de N são ilustrada na figura abaixo.
+
+
+```{r  echo=FALSE, warning=FALSE}
+source("/Users/diogo/Dropbox/ensino/genepop-ensino/figuras_livro/coal.R")
+```
+
+Agora vamos ver o contraste entre trajetórias de IBS e IBD
+
+Aqui, incluímos também o processo mutacional e exploraremos as diferenças entre as trajetórias.
+
+```{r}
+print(c)
+```
+
+
+# Análise de dados do projeto 1000 Genomas
+
+Aqui descrevemos análises que incialmente usamos o vcftools e depois passamo os achados para R, para compilar gráficos. 
+
+```
+ssh lem.ib.usp.br/raid
+```
+
+# Modelagem básica de deriva genética
+
+Inicialmente, vamos mostrar que o processo de deriva genética pode ser simulado usando um código extremamente simples, com apelo didático aos alunos. A seguir, consideramos outras representações.
+
+```{r}
+# Genetic Drift
+
+## Create a haploid population of 1000 individuals with alleles 0 or 1 --------#
+
+# Number of individuals:
+N <- 1000
+
+# Population of individuals '0' or '1':
+pop <- rep(0:1, each = N/2)
+
+# or:
+pop <- rep(0:1, times = c(500, 500))
+
+# or:
+pop <- rep(0:1, times = c(0.5, 0.5)*N)
+
+## define vector with the frequencies of allele 0 in 2000 generations ---------#
+
+# Number of generations
+ngens <- 2000
+
+# vector:
+p <- numeric(ngens)
+
+# 1st element of vector 'p' will be the allele frequency in parent generation:
+p[1] <- mean(pop == 0)
+
+# Now we have to calculate the allele frequencies in the next generations.
+# Let's use a 'for loop' to calculate the frequency in each generation and
+# save the result as an element of vector 'p':
+for(i in 2:ngens) {
+  
+  # the next generation is a random sample of the parental population:
+  pop <- sample(pop, replace = TRUE)
+  
+  # allele frequency in the ith generation:
+  p[i] <- mean(pop == 0)
+}
+
+# Plot
+plot(p, type = "l", 
+     xlab = "generations", ylab = "frequency", 
+     main = "allele frequency change")
+
+```
+
+
+
+
+
+
+
+
